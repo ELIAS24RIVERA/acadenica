@@ -278,6 +278,197 @@
                 </form>
             </div>
         </div>
+        <!-- Modal para agregar/editar profesores -->
+        <div id="teacher-modal" class="modal">
+            <div class="modal-header">
+                <h3 id="teacher-modal-title">Agregar Nuevo Profesor</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="teacher-form">
+                    <input type="hidden" id="teacher-id">
+                    <div class="form-group">
+                        <label for="teacher-name">Nombre Completo</label>
+                        <input type="text" id="teacher-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-email">Email</label>
+                        <input type="email" id="teacher-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-phone">Teléfono</label>
+                        <input type="tel" id="teacher-phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-specialty">Especialidad</label>
+                        <input type="text" id="teacher-specialty" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher-degree">Grado Académico</label>
+                        <select id="teacher-degree">
+                            <option value="Licenciatura">Licenciatura</option>
+                            <option value="Maestría">Maestría</option>
+                            <option value="Doctorado">Doctorado</option>
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary modal-close">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Modal para agregar/editar cursos -->
+        <div id="course-modal" class="modal">
+            <div class="modal-header">
+                <h3 id="course-modal-title">Agregar Nuevo Curso</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="course-form">
+                    <input type="hidden" id="course-code">
+                    <div class="form-group">
+                        <label for="course-name">Nombre del Curso</label>
+                        <input type="text" id="course-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course-teacher">Profesor</label>
+                        <select id="course-teacher" required>
+                            <!-- Los profesores se cargarán aquí con JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="course-schedule">Horario</label>
+                        <input type="text" id="course-schedule" placeholder="Ej: Lunes y Miércoles 10:00-12:00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course-classroom">Aula</label>
+                        <input type="text" id="course-classroom">
+                    </div>
+                    <div class="form-group">
+                        <label for="course-credits">Créditos</label>
+                        <input type="number" id="course-credits" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course-description">Descripción</label>
+                        <textarea id="course-description"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary modal-close">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal para agregar/editar calificaciones -->
+        <div id="grade-modal" class="modal">
+            <div class="modal-header">
+                <h3 id="grade-modal-title">Asignar Calificación</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="grade-form">
+                    <input type="hidden" id="grade-id">
+                    <div class="form-group">
+                        <label for="grade-student">Estudiante</label>
+                        <select id="grade-student" required>
+                            <!-- Los estudiantes se cargarán aquí con JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade-course">Curso</label>
+                        <select id="grade-course" required>
+                            <!-- Los cursos se cargarán aquí con JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade-value">Calificación (0-100)</label>
+                        <input type="number" id="grade-value" min="0" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade-period">Periodo Académico</label>
+                        <select id="grade-period" required>
+                            <option value="2023-1">2023-1</option>
+                            <option value="2023-2">2023-2</option>
+                            <option value="2024-1">2024-1</option>
+                            <option value="2024-2">2024-2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="grade-notes">Observaciones</label>
+                        <textarea id="grade-notes"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary modal-close">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de confirmación -->
+        <div id="confirm-modal" class="modal small">
+            <div class="modal-header">
+                <h3 id="confirm-modal-title">Confirmar acción</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="confirm-message">¿Estás seguro de que deseas realizar esta acción?</p>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary modal-close">Cancelar</button>
+                    <button type="button" id="confirm-action" class="btn btn-danger">Confirmar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal para matrículas -->
+        <div id="enrollment-modal" class="modal">
+            <div class="modal-header">
+                <h3 id="enrollment-modal-title">Nueva Matrícula</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="enrollment-form">
+                    <input type="hidden" id="enrollment-id">
+                    <div class="form-group">
+                        <label for="enrollment-student">Estudiante</label>
+                        <select id="enrollment-student" required>
+                            <!-- Los estudiantes se cargarán aquí con JavaScript -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="enrollment-period">Periodo Académico</label>
+                        <select id="enrollment-period" required>
+                            <option value="2023-1">2023-1</option>
+                            <option value="2023-2">2023-2</option>
+                            <option value="2024-1">2024-1</option>
+                            <option value="2024-2">2024-2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Cursos Disponibles</label>
+                        <div class="available-courses" id="available-courses">
+                            <!-- Los cursos disponibles se cargarán aquí con JavaScript -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Horario Resumen</label>
+                        <div class="schedule-summary" id="schedule-summary">
+                            <!-- El resumen del horario se mostrará aquí -->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="enrollment-notes">Observaciones</label>
+                        <textarea id="enrollment-notes"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary modal-close">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar Matrícula</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+    
 </body>
 </html>
