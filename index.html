@@ -54,6 +54,7 @@
                     </ul>
                 </div>
             </section>
+
             <!-- Sección de Estudiantes -->
             <section id="students" class="section">
                 <div class="section-header">
@@ -77,6 +78,61 @@
                     </thead>
                     <tbody>
                         <!-- Los estudiantes se cargarán aquí con JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sección de Profesores -->
+            <section id="teachers" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-chalkboard-teacher"></i> Gestión de Profesores</h2>
+                    <button id="add-teacher-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Profesor</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="teacher-search" placeholder="Buscar profesores...">
+                    <button class="btn btn-search"><i class="fas fa-search"></i></button>
+                </div>
+                <table id="teachers-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Especialidad</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los profesores se cargarán aquí con JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sección de Cursos -->
+            <section id="courses" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-book"></i> Gestión de Cursos</h2>
+                    <button id="add-course-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Agregar Curso</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="course-search" placeholder="Buscar cursos...">
+                    <button class="btn btn-search"><i class="fas fa-search"></i></button>
+                </div>
+                <table id="courses-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Nombre</th>
+                            <th>Profesor</th>
+                            <th>Horario</th>
+                            <th>Aula</th>
+                            <th>Créditos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los cursos se cargarán aquí con JavaScript -->
                     </tbody>
                 </table>
             </section>
