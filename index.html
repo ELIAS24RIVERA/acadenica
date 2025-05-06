@@ -234,6 +234,50 @@
                 </table>
             </section>
         </main>
+
+        <!-- Modales -->
+        <div id="modal-backdrop" class="modal-backdrop"></div>
+
+        <!-- Modal para agregar/editar estudiantes -->
+        <div id="student-modal" class="modal">
+            <div class="modal-header">
+                <h3 id="student-modal-title">Agregar Nuevo Estudiante</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="student-form">
+                    <input type="hidden" id="student-id">
+                    <div class="form-group">
+                        <label for="student-name">Nombre Completo</label>
+                        <input type="text" id="student-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-email">Email</label>
+                        <input type="email" id="student-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-phone">Teléfono</label>
+                        <input type="tel" id="student-phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="student-career">Carrera</label>
+                        <input type="text" id="student-career" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-address">Dirección</label>
+                        <textarea id="student-address"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-birthdate">Fecha de Nacimiento</label>
+                        <input type="date" id="student-birthdate">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary modal-close">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
