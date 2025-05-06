@@ -32,3 +32,48 @@ const database = {
         { id: 4, description: "Profesor agregado: Dr. Roberto Martínez", date: "2023-05-05 16:20" }
     ]
 };
+// Variables globales
+let currentSection = 'dashboard';
+let editMode = false;
+let itemToDelete = null;
+
+// Inicialización de la aplicación
+document.addEventListener('DOMContentLoaded', function() {
+    // Configurar navegación
+    setupNavigation();
+    
+    // Cargar la sección actual
+    loadSection(currentSection);
+    
+    // Configurar eventos de los modales
+    setupModals();
+    
+    // Configurar eventos de los formularios
+    setupForms();
+    
+    // Configurar eventos de los reportes
+    setupReports();
+});
+
+// Configuración de la navegación
+function setupNavigation() {
+    const navLinks = document.querySelectorAll('nav a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remover la clase active de todos los enlaces
+            navLinks.forEach(navLink => navLink.classList.remove('active'));
+            
+            // Agregar la clase active al enlace clickeado
+            this.classList.add('active');
+            
+            // Obtener la sección a mostrar
+            const sectionId = this.getAttribute('data-section');
+            
+            // Cargar la sección
+            loadSection(sectionId);
+        });
+    });
+}
