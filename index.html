@@ -136,6 +136,103 @@
                     </tbody>
                 </table>
             </section>
+
+            <!-- Sección de Calificaciones -->
+            <section id="grades" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-award"></i> Gestión de Calificaciones</h2>
+                    <button id="add-grade-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Asignar Calificación</button>
+                </div>
+                <div class="filters">
+                    <select id="grade-course-filter">
+                        <option value="">Todos los cursos</option>
+                    </select>
+                    <select id="grade-student-filter">
+                        <option value="">Todos los estudiantes</option>
+                    </select>
+                </div>
+                <table id="grades-table">
+                    <thead>
+                        <tr>
+                            <th>Estudiante</th>
+                            <th>Curso</th>
+                            <th>Calificación</th>
+                            <th>Periodo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las calificaciones se cargarán aquí con JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Sección de Reportes -->
+            <section id="reports" class="section">
+                <h2><i class="fas fa-chart-bar"></i> Reportes Académicos</h2>
+                <div class="report-options">
+                    <div class="report-card" id="student-report">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Reporte de Estudiantes</h3>
+                        <p>Generar reporte detallado de estudiantes</p>
+                    </div>
+                    <div class="report-card" id="course-report">
+                        <i class="fas fa-book"></i>
+                        <h3>Reporte de Cursos</h3>
+                        <p>Generar reporte de cursos y matriculados</p>
+                    </div>
+                    <div class="report-card" id="grade-report">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Reporte de Calificaciones</h3>
+                        <p>Generar reporte estadístico de calificaciones</p>
+                    </div>
+                </div>
+                <div class="report-container" id="report-container">
+                    <!-- El reporte seleccionado se mostrará aquí -->
+                </div>
+            </section>
+
+            <!-- Sección de Matrículas -->
+            <section id="enrollment" class="section">
+                <div class="section-header">
+                    <h2><i class="fas fa-clipboard-list"></i> Gestión de Matrículas</h2>
+                    <button id="add-enrollment-btn" class="btn btn-primary"><i class="fas fa-plus"></i> Nueva Matrícula</button>
+                </div>
+                <div class="filters">
+                    <select id="enrollment-period-filter">
+                        <option value="">Todos los periodos</option>
+                        <option value="2023-1">2023-1</option>
+                        <option value="2023-2">2023-2</option>
+                        <option value="2024-1">2024-1</option>
+                        <option value="2024-2">2024-2</option>
+                    </select>
+                    <select id="enrollment-student-filter">
+                        <option value="">Todos los estudiantes</option>
+                    </select>
+                    <select id="enrollment-status-filter">
+                        <option value="">Todos los estados</option>
+                        <option value="pendiente">Pendiente</option>
+                        <option value="completada">Completada</option>
+                        <option value="cancelada">Cancelada</option>
+                    </select>
+                </div>
+                <table id="enrollment-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Estudiante</th>
+                            <th>Periodo</th>
+                            <th>Cursos</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las matrículas se cargarán aquí con JavaScript -->
+                    </tbody>
+                </table>
+            </section>
         </main>
     </div>
 </body>
